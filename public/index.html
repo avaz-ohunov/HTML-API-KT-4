@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML API KT №4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/websocket.js" defer></script>
+    <script src="js/sse.js" defer></script>
+</head>
+<body class="bg-dark text-light">
+    <div class="container my-5">
+        <h1 class="text-center mb-4">API, WebSocket & SSE Demo</h1>
+
+        <!-- Навигация -->
+        <ul class="nav nav-tabs mb-4" id="myTab">
+            <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#api-tab">API</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#websocket-tab">WebSocket</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#sse-tab">SSE</button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <!-- API -->
+            <div class="tab-pane fade show active" id="api-tab">
+                <button id="load-users" class="btn btn-primary me-2">Загрузить Пользователей</button>
+                <button id="load-posts" class="btn btn-success">Загрузить Посты</button>
+                <div id="data-container" class="mt-4"></div>
+            </div>
+
+            <!-- WebSocket -->
+            <div class="tab-pane fade" id="websocket-tab">
+                <div class="d-flex">
+                    <input type="text" id="message" class="form-control me-2" placeholder="Введите сообщение">
+                    <button id="send-message" class="btn btn-success">Отправить</button>
+                </div>
+                <div id="chat" class="mt-4"></div>
+            </div>
+
+            <!-- SSE -->
+            <div class="tab-pane fade" id="sse-tab">
+                <div id="updates" class="mt-4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
